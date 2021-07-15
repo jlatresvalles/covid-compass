@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>COVID Compass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
+  </head>
+  <body>
+      <div class="container">
+          <div class="nav-wrapper">
+              <div class="left-side">
+                  <div class="nav-link-wrapper">
+                        <a href="index.html"><b>Home</b></a>
+                  </div>
+                    <div class="nav-link-wrapper">
+                        <a href="map.html"><b>Maps</b></a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html"><b>About the App</b></a>
+                    </div>
+            </div>
+
+
+              <div class="right-side">
+                  <div class="author">
+                <div>BY JUSTIN TRESVALLES AND RAPHAELLE HOANG</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <center><div class="aboutTheApp">
+        <h1>About the App</h1>
+        <h3>Who is this app for?</h3>
+        <p>- People of all ages</p>
+        <p>- Know where you can test for COVID-19</p>
+        <p>- Know where you can go for checkups/examinations safely without contracting COVID-19</p>
+        <p>- Medical professionals that want to input information to the public about their practice</p>
+
+        <h3>How Do I Use it as a User?</h3>
+        <p>- Go to Maps Page</p>
+        <p>- Scroll into the location of medical centers near your area</p>
+        <p>- The name of locations when you hover will be</p>
+        <p>     - How many days since last COVID case</p>
+        <p>     - There will be the number of cases, the address, the amount of beds available, and captions from professionals</p>
+        <p>- Reports of COVID near certain areas will light up colored markers</p>
+        <p>     - As there are more reports, the area will turn different colors according to the legend on the left</p>
+        <p>     - Hospitals with COVID will be on a color depending on the legend on the left</p>
+        <p>         - Hospitals without COVID will be green</p>
+        <p>         - Medical Centers that can do COVID testing will be blue</p>
+
+        <h3>How do I use it to input information:</h3>
+        <p>- Go to the Report Page</p>
+        <p>- Register as a “stranger” or a “professional doctor”</p>
+        <p>     - Strangers can add COVID cases anonymously</p>
+        <p>     - Professional doctors will tell if a hospital has a confirmed COVID case or is free</p>
+        <p>     - Input your longitude and latitude</p>
+        <p>     - Enter your email</p>
+
+        <h3>Contact:</h3>
+        <p>800-CDC-INFO (800-232-4636): If need urgent information or general questions about COVID.</p>
+    </div></center>
+
+    <center><div class = "legend">
+        <div class = "iconColors">
+        <h3>Icon Colors</h3>
+        </div>
+        <div class = "green">
+            <p>Green = 0 Cases</p>
+        </div>
+        <div class = "yellow">
+            <p>Yellow = 1-10 Cases</p>
+        </div>
+        <div class = "orange">
+            <p>Orange = 11-100 Cases</p>
+        </div>
+        <div class = "red">
+            <p>Red = 100+ Cases</p>
+        </div>
+        <div class = "blue">
+            <p>Blue = Testing Center</p>
+        </div>
+    </div></center>
+
+    <div class="wallpaper">
+        <img src="images/wallpaper.jpg" alt="wallpaper" width="1920" height="1200">
+    </div>
+    
+</body>
+</html>
