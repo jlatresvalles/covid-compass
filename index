@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>COVID Compass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
+  </head>
+  <body>
+      <div class="container">
+          <div class="nav-wrapper">
+              <div class="left-side">
+                  <div class="nav-link-wrapper">
+                        <a href="index.html"><b>Home</b></a>
+                  </div>
+                    <div class="nav-link-wrapper">
+                        <a href="map.html"><b>Maps</b></a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html"><b>About the App</b></a>
+                    </div>
+            </div>
+
+              <div class="right-side">
+                  <div class="author">
+                <div>BY JUSTIN TRESVALLES AND RAPHAELLE HOANG</div>
+                    </div>
+            </div>
+        </div>
+        <img src="images/sincerely.png" alt="Sincerely" style="width:100%;">
+        <a href=map.html><button class="button">Maps</button></a>
+            <div class="centered">The best way to track COVID cases between hospitals.</div>
+            <div class="centered2">Simply click the button below to get started.</div>
+    </div>
+  </body>
+</html>
