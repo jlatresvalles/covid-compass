@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>COVID Compass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
+    <script src = "https://maps.google.com/maps/api/js?sensor=true"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 850px;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="nav-wrapper">
+              <div class="left-side">
+                  <div class="nav-link-wrapper">
+                        <a href="index.html"><b>Home</b></a>
+                  </div>
+                    <div class="nav-link-wrapper">
+                        <a href="map.html"><b>Maps</b></a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="about.html"><b>About the App</b></a>
+                    </div>
+                    <div class="nav-link-wrapper">
+                        <a href="report.html"><b>Report</b></a>
+                    </div>
+            </div>
+
+
+              <div class="right-side">
+                  <div class="author">
+                <div>BY JUSTIN TRESVALLES AND RAPHAELLE HOANG</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+        <div id="map">
+            <script>
+            var locations = [
+      ['<center><h4>Shore Medical Center | Cases: 0</h4>100 Medical Center Way, Somers Point, NJ 08244<p>693 Beds</p></center><img src="https://shoremedicalcenter.org/sites/default/files/hero_images/smc_directions.jpg" height="200" width="400">', 39.3143, -74.5931],
+      ['<center><h4>Morristown Medical Center | Testing Center</h4>100 Madison Ave, Morristown, NJ 07960<p>196 Beds</p></center><img src="https://www.atlantichealth.org/content/dam/atlantichealth-v2/press-kit/Carol%20G%20Preview4.jpg" height="200" width="400">', 40.7894, -74.4657],
+      ['<center><h4>Hackensack University Medical Center | Cases: 140</h4>30 Prospect Ave, Hackensack, NJ 07601<p>775 Beds</p></center><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Humc.jpg" height="200" width="400">', 40.8840,-74.0565],
+      ['<center><h4>RWJ University Hospital Hamilton | Cases: 20</h4>1 Hamilton Health Pl, Hamilton Township, NJ 08690<p>152 Beds</p></center><img src="https://static.timesofisrael.com/njjewishnews/uploads/2018/03/pmbProgramsGoalReduceHospital.jpg" height="200" width="400">', 40.2168, -74.6725],
+      ['<center><h4>Atlanticare Medical Center | Testing Center</h4>1925 Pacific Ave, Atlantic City, NJ 08401<p>181 Beds</p></center><img src="https://www.atlanticare.org/assets/images/ih/locations/atlanticare-clinical-lab-pomona-129.jpg" height="200" width="400">', 39.4761, -74.5423],
+      ['<center><h4>Johns Hopkins Hospital | Testing Center</h4>1800 Orleans St, Baltimore, MD 21287<p>1,154 Beds</p><p>This testing center tested at least 1,568 patients, making it a very reputable center.</p></center><img src="https://www.hopkinsmedicine.org/the_johns_hopkins_hospital/_images/landing/video_tour.jpg" height="200" width="400">', 39.3299, -76.6205],
+      ['<center><h4>Yale New Haven Hospital | Cases: 300</h4>20 York St, New Haven, CT 06510<p>1,541 Beds</p></center><img src="https://ydn-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/Homeless_SchirinRangnick_YaleDailyNews.jpg" height="200" width="400">', 41.3044, -72.9356],
+      ['<center><h4>Darthmouth-Hitchcock Hospital | Cases: 4</h4>1 Medical Center Dr, Lebanon, NH 03766<p>422 Beds</p></center><img src="https://www.vnews.com/getattachment/bd187fe9-2f0e-4270-8610-2b56afa4fd90/DHMCexpansion-ndb-vnbrk-120818-ph02" height="100" width="200">', 43.6755, -72.2730],
+      ['<center><h4>Virginia Commonwealth University Medical Center | Cases: 175</h4>57 N 11th St, Richmond, VA 23298<p>1,125 Beds</p></center><img src="https://www.vnews.com/getattachment/bd187fe9-2f0e-4270-8610-2b56afa4fd90/DHMCexpansion-ndb-vnbrk-120818-ph02" height="200" width="400">', 43.6755, -72.2730],
+      ['<center><h4>Christiana Care Health System | Cases: 20</h4>4755 Ogletown Stanton Rd, Newark, DE 19718<p>906 Beds</p></center><img src="https://www.delawarepublic.org/sites/wdde/files/styles/x_large/public/202001/ChristianaCare_Wilm.JPG" height="200" width="400">', 39.6902, -75.6726],
+      ['<center><h4>Mount Sinai Hospital | Cases:110</h4>1468 Madison Ave, New York, NY 10029<p>1,134 Beds</p><p>New York added 1,791 new COVID-19 cases and 23 more deaths on Saturday, making the week the biggest surge of the state in positive cases during the pandemic.</center><img src="https://www.mountsinai.org/files/MSHealth/Assets/Media/final/HS/mount-sinai-downtown-pacc.jpg" height="200" width="400">', 40.7900, -73.9526],
+      ['<center><h4>Massachusetts General Hospital | Cases:50</h4>55 Fruit St, Boston, MA 02114<p>999 Beds</p></center><img src="https://d3pxppq3195xue.cloudfront.net/media/images/12/12/05/MGH_2011AG28.486-edit_big-sky_966x668.jpg" height="200" width="400">', 42.3626, -71.0676],
+      ['<center><h4>NewYork-Presbyterian Hospital | Cases:220</h4>170 William St, New York, NY 10038<p>2,650 Beds</p><p>With nearly a thousand new positive COVID-19 cases on Saturday alone, New York county continues to see high transmission rates of the infectious disease will remain in Tier 1.</p></center><img src="https://qtxasset.com/fiercehealthcare/1572915134/nypq-banner.jpg/nypq-banner.jpg?M2dZnNtW6tmqmFiVhSky3BEz_6HZ79G9" height="200" width="400">', 40.8413, -73.9407],
+      ];
+    
+    // Setup the different icons and shadows
+    var iconURLPrefix = 'https://maps.google.com/mapfiles/ms/icons/';
+    
+    var icons = [
+      iconURLPrefix + 'green-dot.png',
+      iconURLPrefix + 'blue-dot.png',
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'orange-dot.png',
+      iconURLPrefix + 'blue-dot.png',
+      iconURLPrefix + 'blue-dot.png',
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'yellow-dot.png',
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'orange-dot.png',
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'orange-dot.png',
+      iconURLPrefix + 'red-dot.png',
+    ]
+    var iconsLength = icons.length;
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 20,
+      center: new google.maps.LatLng(39.3823, -74.6166),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false, /* option for satelate view*/
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 400
+    });
+
+    var markers = new Array();
+    var iconCounter = 0;
+    
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+      
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+      	iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {  
+				bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+    
+</script>
+</body>
+</html>
