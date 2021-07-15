@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>COVID Compass</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                      <a href="index.html"><b>Home</b></a>
+                </div>
+                  <div class="nav-link-wrapper">
+                      <a href="map.html"><b>Maps</b></a>
+                  </div>
+                  <div class="nav-link-wrapper">
+                      <a href="about.html"><b>About the App</b></a>
+                  </div>
+          </div>
+
+
+            <div class="right-side">
+                <div class="author">
+              <div>BY JUSTIN TRESVALLES AND RAPHAELLE HOANG</div>
+                  </div>
+          </div>
+      </div>
+  </div>
+
+  
+    <form action = "results.html" method="GET">
+    <div class = "reportLabel">
+        <div>
+            <label>Name:</label>
+            <input>
+            <br></br>
+        </div>
+            <div>
+                <label>Location Name:</label>
+                <input name="Name">
+                <br></br>
+            </div>
+            <div>
+                <label>Location Address:</label>
+                <input name="Location Address">
+                <br></br>
+            </div>
+            <div>
+                <label>Location Longitude and Latitude:</label>
+                <input name="Location Coordinates">
+                <br></br>
+            </div>
+            <div>
+                    Professional or Normal User?
+                    <div>
+                        <label for="professional">Professional</label>
+                        <input type="checkbox" name="profesional" id="professional">
+                    </div>
+                <label for="stranger">Normal User</label>
+                <input type="checkbox" name="stranger" id="stranger">
+                <br></br>
+            </div>
+            <div>
+                <label>If professional, report scientific evidence.</label>
+                <input name="Scientific Evidence" placeholder="None">
+                <br></br>
+            </div>
+            <div>
+                <label>How many cases?</label>
+                <input name="Amount of Cases">
+                <br></br>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input name="Email">
+                <br></br>
+                <br></br>
+            </div>
+        </div>
+        </div>
+        </div>
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+
+    <div class = "covidPic">
+    <img src="images/reportPic.jpg" alt="COVID" width="1920" height: "1080">
+    </div>
+</body>
+</html>
